@@ -55,6 +55,7 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'docker-hub-id', toolName: 'docker', url: 'https://index.docker.io/v1/') {
                     sh 'docker build -t arpita199812/taskmaster-pro:v2 .'
+                    sh 'docker run -d --name task -p 5000:8080 arpita199812/taskmaster-pro:v2'
                     sh 'docker push arpita199812/taskmaster-pro:v2'
                     }
                 }
