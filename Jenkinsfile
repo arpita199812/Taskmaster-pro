@@ -44,7 +44,7 @@ pipeline {
         stage('OWASAP-Dependency-Check') {
             steps {
                 script {
-                    env.DEPENDENCYCHECK_APIKEY = 'cf340717-f1f0-4b18-a2f1-2bba5977c8a4'
+                    env.DEPENDENCYCHECK_APIKEY = 'nvd-api-key'
                     dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'Dependency-check' 
                     dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
                 }
