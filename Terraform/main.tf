@@ -3,11 +3,13 @@ terraform {
     aws = {
       source = "hashicorp/aws"
       version = "5.65.0"
-      region = "us-east-1"
     }
   }
 }
 
+providers "aws" {
+   region = var.region
+}
  
 
 resource "aws_vpc" "main" {
