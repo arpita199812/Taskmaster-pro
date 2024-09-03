@@ -7,4 +7,5 @@ variable "ssh_key_name" {
 variable "tags" {
    description = "Tags given"
    type        = string
+   default     = "taskpro"
 }
