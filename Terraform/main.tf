@@ -1,20 +1,19 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "5.65.0"
     }
   }
 }
 
 provider "aws" {
-   region = var.region
+  region = var.region
 }
- 
 
 resource "aws_vpc" "main" {
-  cidr_block = var.vpc_cidr_block
-  enable_dns_support = true
+  cidr_block           = var.vpc_cidr_block
+  enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
     Name = "main-vpc"
@@ -42,9 +41,9 @@ resource "aws_route_table" "main" {
 }
 
 resource "aws_subnet" "main" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = var.subnet_cidr_block
-  availability_zone = "us-east-1a"
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = var.subnet_cidr_block
+  availability_zone       = "us-east-1a"
   map_public_ip_on_launch = true
   tags = {
     Name = "main-subnet"
@@ -52,9 +51,9 @@ resource "aws_subnet" "main" {
 }
 
 resource "aws_subnet" "secondary" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = "10.0.2.0/24"
-  availability_zone = "us-east-1b"
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.2.0/24"
+  availability_zone       = "us-east-1b"
   map_public_ip_on_launch = true
   tags = {
     Name = "secondary-subnet"
@@ -110,7 +109,6 @@ resource "aws_eks_cluster" "main" {
     Name = var.eks_cluster_name
   }
 }
-
 
 resource "aws_instance" "my_instance" {
   ami           = var.ami_id
