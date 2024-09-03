@@ -7,7 +7,7 @@ eks_version        = "1.21"
 ami_id             = "ami-0e86e20dae9224db8"
 instance_type      = "t2.medium"
 key_name            = "my-key-pair"
-export AWS_ACCESS_KEY_ID="AWS_ACCESS_KEY_ID"
-export AWS_SECRET_ACCESS_KEY="AWS_SECRET_ACCESS_KEY"
+AWS_ACCESS_KEY_ID  =  "AWS_ACCESS_KEY_ID"
+AWS_SECRET_ACCESS_KEY = "AWS_SECRET_ACCESS_KEY"
 
 
