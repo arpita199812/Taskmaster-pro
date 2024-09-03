@@ -1,9 +1,9 @@
 output "cluster_id" {
-  value = aws_eks_cluster.taskpro.id
+  value = aws_eks_cluster.taskpro_cluster.id
 }
 
 output "node_group_id" {
-  value = aws_eks_node_group.taskpro.id
+  value = aws_eks_node_group.taskpro_ng.id
 }
 
 output "vpc_id" {
