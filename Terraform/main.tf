@@ -9,6 +9,7 @@ terraform {
 
 provider "aws" {
   region = var.region
+  version = "~> 4.0"
 }
 
 resource "aws_vpc" "main" {
