@@ -43,7 +43,7 @@ resource "aws_route_table" "main" {
 resource "aws_subnet" "main" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.subnet_cidr_block
-  availability_zone       = "us-east-1a"
+  availability_zone       = var.availability_zone
   map_public_ip_on_launch = true
   tags = {
     Name = "main-subnet"
@@ -53,7 +53,7 @@ resource "aws_subnet" "main" {
 resource "aws_subnet" "secondary" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.2.0/24"
-  availability_zone       = "us-east-1b"
+  availability_zone       = "${var.availability_zone}-b"
   map_public_ip_on_launch = true
   tags = {
     Name = "secondary-subnet"
