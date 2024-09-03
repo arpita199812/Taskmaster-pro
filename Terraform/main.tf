@@ -85,11 +85,6 @@ resource "aws_security_group" "taskpro_node_sg" {
   }
 }
 
-  tags = {
-    Name = "eks-cluster-role"
-  }
-}
-
 resource "aws_eks_cluster" "taskpro_cluster" {
   name     = "taskpro-cluster"
   role_arn = aws_iam_role.taskpro_cluster_role.arn
