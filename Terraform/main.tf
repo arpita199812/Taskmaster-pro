@@ -3,13 +3,12 @@ terraform {
     aws = {
       source = "hashicorp/aws"
       version = "5.65.0"
+      region = "us-east-1"
     }
   }
 }
 
-provider "aws" {
-  region = var.region
-}
+ 
 
 resource "aws_vpc" "main" {
   cidr_block = var.vpc_cidr_block
