@@ -1,4 +1,9 @@
-ami_id          = "ami-0a0e5d9c7acc336f1"  # Replace with your desired AMI
-key_name         = "my-key"  # Replace with your key pair name
-availability_zone = "us-east-1a"
+region             = "us-east-1"
+vpc_cidr_block     = "10.0.0.0/16"
+subnet_cidr_block  = "10.0.1.0/24"
+eks_cluster_name   = "my-eks-cluster"
+eks_version        = "1.21"
+ami_id             = "ami-0e86e20dae9224db8"
+instance_type      = "t2.micro"
+key_name            = "my-key-pair"
 
