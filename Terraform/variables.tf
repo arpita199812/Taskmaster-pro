@@ -13,6 +13,12 @@ variable "subnet_cidr_block" {
   type        = string
 }
 
+variable "availability_zone" {
+  description = "Availability zone for the subnets"
+  type        = string
+}
+
+
 variable "eks_cluster_name" {
   description = "Name of the EKS cluster"
   type        = string
