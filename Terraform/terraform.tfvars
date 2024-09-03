@@ -4,6 +4,6 @@ subnet_cidr_block  = "10.0.1.0/24"
 eks_cluster_name   = "my-eks-cluster"
 eks_version        = "1.21"
 ami_id             = "ami-0e86e20dae9224db8"
-instance_type      = "t2.micro"
+instance_type      = "t2.medium"
 key_name            = "my-key-pair"
 
