@@ -1,9 +1,9 @@
 provider "aws" {
-  region = var.region
+  region = "us-east-1"
 }
 
 resource "aws_vpc" "taskpro_vpc" {
-  cidr_block    = var.vpc_cidr_block
+  cidr_block    = "10.0.0.0/16"
 
   tags = {
     Name = "taskpro-vpc"
