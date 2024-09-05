@@ -95,7 +95,7 @@ resource "aws_eks_cluster" "taskpro_cluster" {
   }
 }
 
-resource "aws_eks_node_group" "taskpro_ng" {
+resource "aws_eks_node_group" "taskpro" {
   cluster_name    = aws_eks_cluster.taskpro_cluster.name
   node_group_name = "taskpro-node-group"
   node_role_arn   = aws_iam_role.taskpro_node_group_role.arn
